@@ -14,7 +14,8 @@ You need to call the `​/api​/github` method and pass the following parameter
 + `templateRepository` - a repository whose files will be considered base for Moss. Code from base files is not parsed by Moss. For example `TeymurZeynally/GHC-Template-CPP-Plagiarism`.
 
 ### Checking zip files
-Sometimes you just need to download a zip file with all the students' work and get a report.
+
+Sometimes you need just to upload a zip file with all the students work and get a report.
 
 You need to call the `/api/moss` method and pass the following parameters:
 + `language` - Programming language from the list available for Moss.
