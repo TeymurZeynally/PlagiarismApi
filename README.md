@@ -13,6 +13,8 @@ You need to call the `​/api​/github` method and pass the following parameter
 + `language` - Programming language from the list available for Moss
 + `templateRepository` - a repository whose files will be considered base for Moss. Code from base files is not parsed by Moss. For example `TeymurZeynally/GHC-Template-CPP-Plagiarism`.
 
+When this api method is called, the `templateRepository` repository is downloaded, as well as all repositories from `organization` that satisfy `repositoryPrefix`. From all downloaded repositories, files matching `fileRegex` are extracted and sent to Moss. The plagiarism report is filtered by `reportFilterRegex`.
+
 ### Checking zip files
 
 Sometimes you need just to upload a zip file with all the students work and get a report.
@@ -22,6 +24,8 @@ You need to call the `/api/moss` method and pass the following parameters:
 + `fileRegex` - Regex for files to look for in zip archives. For example `.*.cpp` will only send files with .cpp extension to Moss.
 + `zip` - Zip archive with student work.
 + `baseZip` - Zip archive with base files.
+
+When this api method is called, files matching `fileRegex` will be extracted and sent to Moss.
 
 ## Dependencies
 + [TeymurZeynally/MossClient](https://github.com/TeymurZeynally/MossClient)
