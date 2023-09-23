@@ -84,7 +84,7 @@ namespace CodePlagiarismApi.Services
 
 		private Uri GetReportUri(List<(byte[] Contents, string Name)> files, List<(byte[] Contents, string Name)> baseFiles, MossLanguage language)
 		{
-			_logger.LogDebug("Sending request to stanford moss server with {Count} base files and {Count} files", baseFiles.Count, files.Count);
+			_logger.LogDebug("Sending request to stanford moss server with {BaseFilesCount} base files and {FilesCount} files", baseFiles.Count, files.Count);
 			var githubHashRegex = new Regex(@"-[a-z0-9]{40}\/");
 			baseFiles.ForEach(f => _mossClient.AddBaseFile(f.Contents, githubHashRegex.Replace(f.Name, "/"), language));
 			files.ForEach(f => _mossClient.AddFile(f.Contents, githubHashRegex.Replace(f.Name, "/"), language));
