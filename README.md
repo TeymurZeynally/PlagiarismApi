@@ -31,6 +31,3 @@ When this api method is called, files matching `fileRegex` will be extracted and
 + [TeymurZeynally/MossClient](https://github.com/TeymurZeynally/MossClient)
 + [octokit/octokit.net](https://github.com/octokit/octokit.net)
 
-## Swagger
-https://codeplagiarismapi.azurewebsites.net/swagger/index.html
-

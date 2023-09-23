@@ -1,5 +1,6 @@
 using System.Text.RegularExpressions;
 using CodePlagiarismApi.Contract;
+using CodePlagiarismApi.Filters;
 using CodePlagiarismApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Moss.Client;
@@ -8,6 +9,7 @@ namespace CodePlagiarismApi.Controllers
 {
 	[ApiController]
 	[Route("api/moss")]
+	[TypeFilter(typeof(MossExceptionFilterAttribute))]
 	public class MossController : ControllerBase
 	{
 		private readonly MossService _service;

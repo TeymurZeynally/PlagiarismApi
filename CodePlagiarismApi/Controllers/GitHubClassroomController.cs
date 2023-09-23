@@ -1,4 +1,5 @@
 using CodePlagiarismApi.Contract;
+using CodePlagiarismApi.Filters;
 using CodePlagiarismApi.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,6 +7,7 @@ namespace CodePlagiarismApi.Controllers
 {
 	[ApiController]
 	[Route("api/github")]
+	[TypeFilter(typeof(MossExceptionFilterAttribute))]
 	public class GitHubClassroomController : ControllerBase
 	{
 		private readonly GitHubClassroomService _service;
